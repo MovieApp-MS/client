@@ -1,0 +1,32 @@
+@if (isLoading$ | async) {
+<mat-spinner></mat-spinner>
+} @else {
+  @if (movie$ | async; as movie ) {
+     <mat-card class="example-card" appearance="outlined">
+         <mat-card-header class="flex justify-between">
+        <app-fav-button [favState]="movie"/>
+      <mat-card-title>Director: {{ movie.director }}</mat-card-title>
+      <mat-card-subtitle>Año: {{ movie.released }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="grid grid-cols-[1fr_5fr] gap-1">
+        <img class="max-w-50" mat-card-image [src]="movie.poster" [alt]="movie.title">
+        <mat-card-content>
+          <p>
+            <strong>Sinopsis:</strong> {{movie.plot}}
+          </p>
+          <p>
+              <strong>Actores:</strong> {{movie.actors}}
+          </p>
+          <p>
+              <strong>Genero:</strong> {{movie.genre}}
+          </p>
+          <p>
+              <strong>Duración:</strong> {{movie.runtime}}
+          </p>
+        </mat-card-content>
+    </div>
+        
+  </mat-card>
+  
+  }
+}

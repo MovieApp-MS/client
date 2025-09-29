@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container-dashboard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: black;
+}
+
+.snackBarStateSuccess .mdc-snackbar__surface {
+  background-color: rgb(4, 58, 4)!important;
+  color: white;
+}
+
+.snackBarStateWarning .mdc-snackbar__surface {
+  background-color: rgb(151, 43, 10)!important;
+  color: white;
+}
+
+/* .snackBarStates.mdc-snackbar .mdc-snackbar__surface {
+  background-color: #e53935 !important;
+  color: white !important;
+} */

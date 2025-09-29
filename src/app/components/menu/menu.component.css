@@ -1,0 +1,18 @@
+#menu {
+  overflow-y: hidden;
+  height: 100%;
+  min-height: 100vh;
+  background-color: rgba(39, 38, 38, 0.9);
+}
+
+.menuOpen {
+  width: 100%;
+  max-width: 250px;
+  transition: all 1s ease;
+  transform: translateX(0px);
+}
+
+.menuClose {
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}

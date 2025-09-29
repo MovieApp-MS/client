@@ -1,0 +1,8 @@
+a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  padding-left: 1em;
+  color: white;
+}

@@ -1,0 +1,10 @@
+<div
+  id="menu"
+  (click)="openCloseMenu()"
+  [class]="menuOpen() ? 'menuOpen' : 'menuClose'"
+>
+  <!-- side menu header -->
+  <app-menu-header></app-menu-header>
+  <!-- side menu options -->
+  <app-menu-options></app-menu-options>
+</div>

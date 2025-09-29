@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Builds
+dist/
+build/
+
+# Environments
+.env
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+.angular/
+
+# Mac y Windows
+.DS_Store
+Thumbs.db
