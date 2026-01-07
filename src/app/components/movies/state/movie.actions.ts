@@ -25,6 +25,16 @@ export const loadedMoviesSuccess = createAction(
   props<{ movies: Movie[] }>(),
 );
 
+export const getFavorites = createAction(
+  "[Movie List] Get Favorites Movies",
+  props<{ userId: string }>(),
+);
+
+export const loadedFavoritesSuccess = createAction(
+  "[Movie List] Favorites Movies Loaded",
+  props<{ favorites: Movie[] }>(),
+);
+
 export const setMovieFav = createAction(
   "[Movie List] Addding Movie as Favourite",
   props<{ id: string }>(),

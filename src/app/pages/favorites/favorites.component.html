@@ -1,3 +1,9 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 :grid-cols-3 gap-4">
- 
-</div>
+ <section class="grid grid-rows-[16rem,1fr] min-h-screen gap-10">
+      <div class="grid items-stretch md:grid-cols-4 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 grid-rows-3 gap-5">
+       @if (favorites$ | async | json){
+         @for (movie of favorites$ | async; track movie.id) {
+             <app-movie-card [movie]="movie"></app-movie-card>
+         }
+       }
+    </div>
+</section>

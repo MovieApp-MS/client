@@ -12,5 +12,10 @@ export const movieLoading = createSelector(
 
 export const getMovieSelector = createSelector(
   movieSelector,
-  (state) => state.movie
+  (state) => state.movie,
+);
+
+export const getFavoritesSelector = createSelector(
+  movieSelector,
+  (state) => state.favorites,
 );

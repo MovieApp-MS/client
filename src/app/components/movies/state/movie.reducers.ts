@@ -7,6 +7,8 @@ import {
   loadedMovieSuccess,
   setMovieFav,
   unsetMovieFav,
+  getFavorites,
+  loadedFavoritesSuccess,
 } from "./movie.actions";
 import { MovieStates } from "./movie.states";
 
@@ -14,6 +16,7 @@ export const initialState: MovieStates = {
   movies: [],
   isLoading: false,
   movie: null,
+  favorites: [],
 };
 
 export const listMovieReducer = createReducer(
@@ -66,6 +69,19 @@ export const listMovieReducer = createReducer(
       ...state,
       isLoading: false,
       movie: { ...payload.movie, fav: true },
+    };
+  }),
+  on(getFavorites, (state, payload) => {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }),
+  on(loadedFavoritesSuccess, (state, payload) => {
+    return {
+      ...state,
+      isLoading: false,
+      favorites: payload.favorites,
     };
   }),
   on(errorMessage, (state, payload) => {

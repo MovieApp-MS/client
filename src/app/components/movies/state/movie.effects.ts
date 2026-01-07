@@ -1,8 +1,10 @@
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import {
   errorMessage,
+  getFavorites,
   getMovie,
   getMovieList,
+  loadedFavoritesSuccess,
   loadedMoviesSuccess,
   loadedMovieSuccess,
   setMovieFav,
@@ -93,6 +95,19 @@ export class MovieEffects {
             `${environment.apiUrl}/movies/by-id?movieId=${id}`,
           )
           .pipe(map((res) => loadedMovieSuccess({ movie: res.data }))),
+      ),
+    );
+  });
+
+  loadFavorites = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(getFavorites),
+      exhaustMap(({ userId }) =>
+        this.httpService
+          .requestUrl<ApiResponse>(
+            `${environment.apiUrl}/movies/favorites?userId=${userId}`,
+          )
+          .pipe(map((res) => loadedFavoritesSuccess({ favorites: res.data }))),
       ),
     );
   });
