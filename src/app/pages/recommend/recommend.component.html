@@ -1,0 +1,37 @@
+<div class="p-10">
+    <h3 class="bg-black p-3 border-b-2 border-white text-[1.2rem] text-white">Haciendo clic en recomendar, se utilizará tu listado de Favoritas para generar recomendaciones</h3>
+    <section class="p-5 grid grid-rows-[100px_1fr] gap-10">
+        
+             <button
+               class="rounded-md bg-slate-800 py-4 px-4 border max-w-50 max-h-20 border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+               type="button" 
+               (click)="getRecommend()"     
+             >
+            @if(isLoading$ | async){
+             <div class="justify-center grid-cols-2 flex gap-5">
+                 <mat-progress-spinner 
+                     mode="indeterminate"
+                     [diameter]="20" 
+                     >
+                 </mat-progress-spinner>
+                 <span class="flex items-center">Generando...</span>
+              </div>
+            } @else {
+                <div class="justify-center grid-cols-2 flex gap-5">
+                    <mat-icon aria-hidden="false" class="w-5 h-5 top-3 left-2.5 text-slate-600" fontIcon="search"></mat-icon>
+                    <span class="flex items-center">Recomendar</span>
+                </div>
+            }
+             </button>  
+            <div class="">            
+            @if(recommendedMovies$ | async; as recommended){
+                @for (movie of recommended; track $index) {
+                    <div class="text-[1e,] flex flex-row max-w-70">
+                        <mat-icon fontIcon="movie"></mat-icon>
+                        <span class="flex items-center">{{movie.title}}</span>
+                    </div>
+                }
+            }            
+        </div>         
+    </section>
+</div>

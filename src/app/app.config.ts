@@ -6,7 +6,7 @@ import {
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
 
-import { routes } from "./app.routes";
+import { routes } from "./routes/routes.component";
 import {
   HTTP_INTERCEPTORS,
   provideHttpClient,
@@ -18,6 +18,7 @@ import { ROOT_REDUCER_MAP } from "./core/store/app.states";
 import { provideEffects } from "@ngrx/effects";
 import { MovieEffects } from "./components/movies/state/movie.effects";
 import { AuthInterceptor } from "./core/interceptors/http-error.interceptor";
+import { RecommendEffects } from "./components/recommend/state/recommend.effects";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,7 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptorsFromDi()),
     provideStore(ROOT_REDUCER_MAP),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects(MovieEffects),
+    provideEffects(MovieEffects, RecommendEffects),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
 };

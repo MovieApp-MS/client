@@ -17,15 +17,21 @@ interface menuOptions {
 export class MenuOptionsComponent {
   public items: menuOptions[] = [
     {
-      title: "favorites",
+      title: "Favorites",
       path: "/dashboard/favorites",
-      icon: "book",
+      icon: "favorite",
       customStyle: "w-xs h-18",
     },
     {
-      title: "search",
+      title: "Search",
       path: "/dashboard/search",
       icon: "search",
+      customStyle: "w-xs h-18",
+    },
+    {
+      title: "Recommend",
+      path: "/dashboard/recommend",
+      icon: "thumb_up",
       customStyle: "w-xs h-18",
     },
   ];
