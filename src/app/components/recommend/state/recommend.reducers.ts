@@ -3,6 +3,7 @@ import { RecommendState } from "./recommend.states";
 import {
   getRecommendListSucceded,
   getRecomendedList,
+  errorMessage,
 } from "./recommend.actions";
 
 export const initialState: RecommendState = {
@@ -23,6 +24,12 @@ export const listRecommendedReducer = createReducer(
       ...state,
       isLoading: false,
       recommend: payload.recommend,
+    };
+  }),
+  on(errorMessage, (state) => {
+    return {
+      ...state,
+      isLoading: false,
     };
   }),
 );

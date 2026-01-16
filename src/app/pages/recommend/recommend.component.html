@@ -26,12 +26,13 @@
             <div class="">            
             @if(recommendedMovies$ | async; as recommended){
                 @for (movie of recommended; track $index) {
-                    <div class="text-[1e,] flex flex-row max-w-70">
+                    <div class="border-2 p-2 rounded-md text-[1e,] flex flex-row max-w-70 hover:bg-black hover:text-white">
                         <mat-icon fontIcon="movie"></mat-icon>
-                        <span class="flex items-center">{{movie.title}}</span>
+                        <span class="flex items-center text-[1.2rem]">{{movie.title}}</span>
                     </div>
                 }
             }            
         </div>         
     </section>
+    <div id="n8n-chat"></div>
 </div>

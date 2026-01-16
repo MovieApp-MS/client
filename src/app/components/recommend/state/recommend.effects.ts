@@ -27,7 +27,6 @@ export class RecommendEffects {
           )
           .pipe(
             map((res) => {
-              console.log("Me ejecute en getrecommended", res);
               return getRecommendListSucceded({
                 recommend: res.data[0].recommended,
               });
