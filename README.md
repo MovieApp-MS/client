@@ -4,11 +4,11 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Description
 
-This website is created with Angular + Ngrx, algo i used Nest as gateway and created microservices using TCP to comunnicate.
+This website was built with Angular and NGRX. I used Nest as the gateway and created microservices using TCP for communication.
 
-For the DB i used Postgresql.
+I used PostgreSQL for the database.
 
-I added a chat box created with n8n that works locally, you can ask about movies and actors/actresses.
+I added a chat feature built with n8n that runs locally. You can ask questions about movies and actors/actresses.
 
 ## Development server
 
@@ -32,5 +32,6 @@ Once the server is running, open your browser and navigate to `http://localhost:
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
 
 
